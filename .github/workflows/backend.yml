@@ -5,11 +5,10 @@ on: #メインブランチへのpushをトリガーとして実行すること�
     branches:
       - main
       
-default:
+defaults:
   run:
     working-directory: backend
 
-      
 jobs: #実行する内容を指定する runs以下を実行
   build:
     runs-on: ubuntu-latest
@@ -18,7 +17,7 @@ jobs: #実行する内容を指定する runs以下を実行
       - uses: actions/setup-node@v3
         with:
           node-verssion: 16.x
-          
+
       - run: npm ci
       - run: npm run test
       - run: npm run build
