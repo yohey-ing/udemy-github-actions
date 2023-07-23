@@ -1,0 +1,12 @@
+name: backend
+
+on: #メインブランチへのpushをトリガーとして実行することを指定
+  push:
+    branches:
+      - main
+      
+jobs: #実行する内容を指定する runs以下を実行
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hello world
